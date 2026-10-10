@@ -11,8 +11,8 @@
     "rem-id": "tsx watch src/rem_id.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^1.13.8",
-    "hono": "^4.7.4"
+    "@hono/node-server": "^1.19.17",
+    "hono": "^4.13.13"
   },
   "devDependencies": {
     "@types/node": "^22.13.10",

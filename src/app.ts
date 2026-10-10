@@ -1,8 +1,12 @@
+import { bodyLimit } from 'hono/body-limit';
+import { secureHeaders } from 'hono/secure-headers';
 import { Hono } from 'hono';
 import { ReminderError, ReminderService, type Reminder } from './ReminderService.js';
 
 export function createApp() {
   const app = new Hono();
+  app.use('*', secureHeaders());
+  app.use('*', bodyLimit({ maxSize: 64 * 1024, onError: c => c.json({ error: 'Request body exceeds 64 KiB' }, 413) }));
   const service = new ReminderService();
   app.onError((error, c) => {
     if (error instanceof ReminderError) return c.json({ error: error.message }, error.status);
