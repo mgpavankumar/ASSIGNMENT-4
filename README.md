@@ -1,5 +1,7 @@
 # Reminder REST API · Hono & TypeScript
 
+[![CI](https://github.com/mgpavankumar/ASSIGNMENT-4/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mgpavankumar/ASSIGNMENT-4/actions/workflows/ci.yml)
+
 A reminder HTTP API with a typed service, request validation, and automated lifecycle checks.
 
 **Author:** [M. G. Pavan Kumar](https://github.com/mgpavankumar)
@@ -44,8 +46,8 @@ See [TEST_RESULTS.md](TEST_RESULTS.md) for recorded local verification and its l
 
 | Path | Purpose |
 | --- | --- |
-| `src/ReminderService.ts` | Application logic and/or demonstration |
-| `src/app.ts` | Application logic and/or demonstration |
+| `src/ReminderService.ts` | Typed reminder operations and validation |
+| `src/app.ts` | HTTP application, routes, and request validation |
 | `src/index.ts` | Server entry point |
 | `src/rem_id.ts` | Application logic and/or demonstration |
 | `src/reminder.ts` | Server entry point |
@@ -71,6 +73,18 @@ Records are held in memory and disappear when the process stops. This learning A
 | DELETE | `/reminders/:id` |
 | POST | `/reminders/:id/mark-completed` |
 | POST | `/reminders/:id/unmark-completed` |
+
+## Try the API
+
+With the server running, create a synthetic reminder:
+
+```bash
+curl -i http://localhost:3000/reminders -H 'Content-Type: application/json' -d '{"id":"demo-study","title":"Study","description":"Review TypeScript","dueDate":"2026-12-31","isCompleted":false}'
+curl -i http://localhost:3000/reminders/demo-study
+curl -i -X POST http://localhost:3000/reminders/demo-study/mark-completed
+```
+
+Expect HTTP 201 for creation and HTTP 200 for retrieval and completion. Reusing the same ID returns 409. On Windows PowerShell use `curl.exe`.
 
 ## Contributing
 
