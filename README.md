@@ -1,6 +1,6 @@
 # Reminder REST API · Hono & TypeScript
 
-[![CI](https://github.com/mgpavankumar/ASSIGNMENT-4/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mgpavankumar/ASSIGNMENT-4/actions/workflows/ci.yml)
+[![CI](https://github.com/mgpavankumar/reminder-api/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mgpavankumar/reminder-api/actions/workflows/ci.yml)
 
 A reminder HTTP API with a typed service, request validation, and automated lifecycle checks.
 
@@ -18,8 +18,8 @@ A reminder HTTP API with a typed service, request validation, and automated life
 Install Node.js 22 or newer and npm. Clone this repository:
 
 ```bash
-git clone https://github.com/mgpavankumar/ASSIGNMENT-4.git
-cd ASSIGNMENT-4
+git clone https://github.com/mgpavankumar/reminder-api.git
+cd reminder-api
 ```
 
 ```bash
