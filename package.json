@@ -1,17 +1,28 @@
 {
-    "name": "as4",
-    "type": "module",
-    "scripts": {
-      "test": "tsx watch src/ReminderService.ts",
-      "reminder": "tsx watch src/reminder.ts",
-      "rem-id": "tsx watch src/rem_id.ts"
-    },
-    "dependencies": {
-      "@hono/node-server": "^1.13.8",
-      "hono": "^4.7.4"
-    },
-    "devDependencies": {
-      "@types/node": "^20.11.17",
-      "tsx": "^4.7.1"
-    }
-  }
+  "name": "as4",
+  "type": "module",
+  "scripts": {
+    "start": "node --import tsx src/reminder.ts",
+    "dev": "tsx watch src/reminder.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "reminder": "tsx watch src/reminder.ts",
+    "rem-id": "tsx watch src/rem_id.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "4.20.6",
+    "typescript": "5.8.2"
+  },
+  "private": true,
+  "author": "M. G. Pavan Kumar",
+  "engines": {
+    "node": ">=22"
+  },
+  "description": "Validated reminder REST API built with Hono"
+}
